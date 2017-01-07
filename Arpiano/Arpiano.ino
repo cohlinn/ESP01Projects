@@ -1,4 +1,4 @@
-#include <TimerFreeTone.h>
+#include <NewTone.h>
 
 
 #include <Arduino.h>
@@ -84,11 +84,14 @@ void loop()
 }
 
 int VOLUME=1023; //max 1023
+int OFFSET=0;
 
 void play(int ppos)
 {
   if(ppos!=0)
-  TimerFreeTone(SPEAKER, PITCH[ppos*2+20],500);
+  NewTone(SPEAKER, PITCH[ppos*2+OFFSET]);
+  else
+  noNewTone(SPEAKER);
 }
 
 
