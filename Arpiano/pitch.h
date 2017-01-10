@@ -13,7 +13,15 @@ int PITCH[]=
 1760 ,1865 ,1976 ,2093 ,2217 ,2349 ,2489 ,2637 ,2794 ,2960 ,
 3136 ,3322 ,3520 ,3729 ,3951 ,4186 ,4435 ,4699 ,4978  };
 
-/*
+// DURATION OF THE NOTES 
+#define BPM 300      //you can change this value changing all the others
+#define Q 60000/BPM //quarter 1/4 
+#define H 2*Q //half 2/4
+#define E Q/2   //eighth 1/8
+#define S Q/4 // sixteenth 1/16
+#define W 4*Q // whole 4/4
+
+
 #define NOTE_B0 31
 #define NOTE_C1 33
 #define NOTE_CS1 35
@@ -102,4 +110,37 @@ int PITCH[]=
 #define NOTE_C8 4186
 #define NOTE_CS8 4435
 #define NOTE_D8 4699
-#define NOTE_DS8 4978*/
+#define NOTE_DS8 4978
+
+#define SONG_SW 1
+#define SONG_TNG 2
+#define SONG_DRW 3
+
+int SWnotes[] =
+{ NOTE_G1, NOTE_G1, NOTE_G1, NOTE_E1, NOTE_AS1, NOTE_G1, NOTE_E1, NOTE_AS1, NOTE_G1,
+  NOTE_D2, NOTE_D2, NOTE_D2, NOTE_DS2, NOTE_AS1, NOTE_FS1, NOTE_E1, NOTE_AS1, NOTE_G1};
+int SWdur[] = {W, W, W, 3*Q, Q, W, 3*Q, Q, W*2,  W, W, W, 3*Q, Q, W, 3*Q, Q, W*2};
+
+int TNGnotes[] = 
+{ NOTE_AS3, NOTE_F3, NOTE_GS3, NOTE_C3,
+  NOTE_AS3, NOTE_F3, NOTE_GS3, NOTE_C3,
+  NOTE_F2, NOTE_AS2, NOTE_DS3, NOTE_DS3, NOTE_D3, NOTE_AS2, NOTE_G2, NOTE_C3, 
+  NOTE_F3, NOTE_AS3, NOTE_DS4, NOTE_DS4, NOTE_D4, NOTE_AS3, NOTE_G3, NOTE_C4,
+  NOTE_F2, NOTE_AS2, NOTE_DS3, NOTE_DS3, NOTE_D3, NOTE_AS2, NOTE_G2, NOTE_C3, 
+  NOTE_F3, NOTE_AS3, NOTE_DS4, NOTE_DS4, NOTE_D4, NOTE_AS3, NOTE_G3, NOTE_C4, NOTE_F4, NOTE_F4, NOTE_GS4};
+int TNGdur[] = { 
+  W, W, W, W,
+  W, W, W, W,
+  //H+Q, Q, W, H, H, H, H, H, 
+  H+Q, Q, W, H, H, H, H, H, 
+  H+Q, Q, W, H, H, H, H, H,
+  H+Q, Q, W, H, H, H, H, H, 
+  Q+H, Q, W, H, H, H, H, H, H+Q, Q, W+W};
+
+int DRWnotes[] =
+{ NOTE_B2, NOTE_C4, NOTE_B3, NOTE_B3, NOTE_D3, NOTE_A2, NOTE_B2,
+  NOTE_B3, NOTE_G3, NOTE_B2, NOTE_B2, NOTE_B2, NOTE_D3, NOTE_D3, NOTE_C3, NOTE_B2 };
+int DRWdur[] =
+{ W+H,W+H,W*6, W*3,W+H,W+H,W*3, W+H,W+H,W+H,W,H, W+H,W,H,W*3};
+
+
